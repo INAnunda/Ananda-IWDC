@@ -52,5 +52,5 @@ function SaveAccout() {
     localStorage.setItem('userCoins', 0);
     localStorage.setItem('collectedPlaces', JSON.stringify([]));
 
-    window.location.href = "Main_Theme.html";
+    window.location.href = "./Html/Main_Theme.html";
 }
