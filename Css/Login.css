@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+body {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/IMG/mahanakhon-building-bg.png');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+.box-container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 50px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid rgba(255, 220, 25, 0.24);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    width: 400px;
+}
+
+h1 strongs {
+    color: #ffdc15;
+    font-size: 2.5rem;
+    text-shadow: 2px 5px 4px rgba(0, 0, 0, 0.5), 
+                 0 0 10px rgba(255, 215, 0, 0.5), 
+                 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.choose-profile {
+    margin: 30px 0;
+}
+
+.profile {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.profile img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 4px solid rgba(255, 255, 255, 0.1); 
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    object-fit: cover;
+    filter: grayscale(80%); 
+}
+
+.profile img.selected {
+    border-color: #FFD700;
+    transform: scale(1.15);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+    filter: grayscale(0%);
+}
+
+.add-name-user{
+    width: 100%;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.add-name-user input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.button {
+    background-color: #FFD700;
+    color: #000;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 0 #cc9300;
+    transition: all 0.2s;
+}
+
+.button:hover{
+    background-color: #FFCC00; 
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #c68e00;
+}
+
+.button:active {
+    background-color: #FFCC00; 
+    transform: translateY(2px); 
+    box-shadow: 0 1px 0 #c68e00; 
+}
+
+.button-wrapper {
+    width: 200px;
+    height: 80px;
+    
+    background-color: #FFB800; 
+    color: #000; 
+    border: none;
+    padding: 12px 35px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 25px;
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 0 #CC9300; 
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVE 
+   ========================================================================== */
+@media (max-width: 480px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        min-height: 100vh;
+        padding: 20px 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .box-container {
+        width: 100%;
+        padding: 30px 20px;
+        box-sizing: border-box;
+    }
+
+    h1 strongs {
+        font-size: 1.8rem;
+    }
+
+    .profile {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .profile img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .add-name-user {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .add-name-user input {
+        width: 100%;
+        max-width: 280px;
+        margin-left: auto;
+        margin-right: auto;       
+    
+        box-sizing: border-box; 
+    }
+
+    .Button-Wrapper {
+        margin: 0 auto; 
+        display: flex;
+        justify-content: center;
+    }
+}

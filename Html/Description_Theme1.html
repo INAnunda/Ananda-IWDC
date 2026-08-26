@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Architectural Chronicles</title>
+    <link rel="stylesheet" href="/Css/Description.css">
+    <link rel="icon" type="image/png" href="/IMG/Web-Icon.png">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="Scroll-Container">
+
+        <div class="Section-All-Theme" id="theme1">
+
+            <header class="Account">
+                <div class="UserContianer">
+                    <a href="#" style="text-decoration: none;" onclick="LogoutProfile()">
+                        <img src="/IMG/Profile.png" alt="User Profile" class="UserProfileImage" width="200" height="200">
+                    </a>
+                    <div class="UserInfo">
+                        <h2 class="Username"></h2>
+                    </div>
+                </div>
+
+                <div class="Coin-Key">
+                    <div id="Key-Display" class="User-Key" onclick="playTakeKeySound()">
+                        <img src="/IMG/Key.png" alt="Key">
+                    </div>
+                    <div id="Coin-Display" class="Group-Coin" onclick="playCoinSound()">
+                        <img src="/IMG/Coin.png" alt="Coin Slot 1">
+                        <img src="/IMG/Coin.png" alt="Coin Slot 2">
+                        <img src="/IMG/Coin.png" alt="Coin Slot 3">
+                    </div>
+                </div>
+            </header>
+
+            <main>
+                <section class="Section-Theme">
+                    <div class="Main-Container">
+
+                        <div class="Slider-Window-Wrapper">
+                            <div class="music" id="music-toggle" onclick="toggleMusic(), playClickSound()">
+                                <img src="/IMG/speaker-icon.png" alt="Toggle Music" id="speaker-icon">
+                            </div>
+
+                            <div class="Map-Wrapper">
+                                <div class="Icon-Map-Location" onclick="playOpenMapSound()">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=14.3443,100.5416" target="_blank" style="text-decoration: none;">
+                                        <img src="/IMG/MapIcon.png" alt="Location Map">
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="Slider-Window">
+                                <div class="Slider-Track" id="slider-track">
+                                    <div class="Slide-Item">
+                                        <img src="/IMG/Wat-Chaiwatthanaram-5.png" alt="Wat Chaiwatthanaram Present">
+                                        <div class="Slide-Caption">The Khmer-Inspired Central Prang</div>
+                                        <div class="stamp-tooltip">Although created in the late Ayutthaya period, it was clearly influenced by Khmer art. The majestic central tower is surrounded by four directional prangs, all situated on a single unified base.</div>
+                                    </div>
+                                    <div class="Slide-Item">
+                                        <img src="/IMG/Wat-Chaiwatthanaram-6.png" alt="Wat Chaiwatthanaram Illustration">
+                                        <div class="Slide-Caption">The City of Red Bricks</div>
+                                        <div class="stamp-tooltip">The contrast between the burnt-clay red bricks, green grass, and blue sky attracts photographers worldwide. During sunset, the light reflects off the bricks, transforming them into a brilliant copper-gold glow.</div>
+                                    </div>
+                                    <div class="Slide-Item">
+                                        <img src="/IMG/Wat-Chaiwatthanaram-4.png" alt="Wat Chaiwatthanaram Aerial View">
+                                        <div class="Slide-Caption">Galleries and Sandstone Buddha Images</div>
+                                        <div class="stamp-tooltip">The cloister walls surrounding the central Prang now only reveal their foundations and weathered sandstone Buddha images. Most of these headless statues stand as a powerful architectural testament to the "Truth of Time."</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="Slider-Helping">
+                            <div class="button-wrapper">
+                                <button id="btn-stop" class="NextButton" style="background-color: #f734347e; color: white; box-shadow: 0 4px 0 #a106067c;"><strong>STOP</strong></button>
+                                <button id="btn-play" class="NextButton" style="display: none; background-color: #01ff12; color: white; box-shadow: 0 4px 0 #038b0c;"><strong>PLAY</strong></button>
+                            </div>
+                            <div class="button-wrapper">
+                                <button type="button" class="NextButton" onclick="collectCoin('theme1')"><strong>Take</strong></button>
+                            </div>
+                            <div class="button-wrapper">
+                                <a href="/Html/Main_Theme.html" style="text-decoration: none;">
+                                    <button type="button" class="NextButton" style="background-color: #ffffff84; color: white; box-shadow: 0 4px 0 #6c6c6c80;"><strong>Back</strong></button>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <div class="Section-Community">
+            <div class="Section-Theme-Community" id="community-theme1">
+                <section class="Section-Theme Community-Container">
+                    <div class="Header-Wrapper">
+                        <div class="Community-Header">
+                            <h2>Community Hub</h2>
+                            <p>Share photos from real locations to earn a medal.</p>
+                        </div>
+                    </div>
+
+                    <div class="Main-Box-Wrapper">
+                        <div class="Upload-Box">
+                            <div class="Preview-Area" onclick="document.getElementById('file-input').click()">
+                                <img src="/IMG/Select-an-image.png" alt="Upload Preview" id="preview-img">
+                                <p id="preview-text">Click to select your image.</p>
+                            </div>
+                            <div class="Comment-Input-Wrapper">
+                                <textarea id="user-comment" placeholder="Write down your impressions."></textarea>
+                            </div>
+                            <div class="Post-button-wrapper">
+                                <input type="file" id="file-input" accept="image/*" onchange="previewFile()" hidden>
+                                <button type="button" class="PostButton" onclick="simulatePost('theme1')">Post</button>
+                            </div>
+                        </div>
+
+                        <div class="Mini-Feed" id="mini-feed-theme1">
+                            </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+    </div>
+
+    <audio id="theme-bg-music" loop></audio>
+    <script src="/JS/Javascript1.js"></script>
+    <script src="/JS/MusicHandler.js"></script>
+</body>
+</html>

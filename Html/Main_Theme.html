@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Architectural Chronicles</title>
+    <link rel="stylesheet" href="/Css/Themes.css">
+    <link rel="icon" type="image/png" href="/IMG/Web-Icon.png">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    
+    <div class="Scroll-Container">
+
+        <header class="Account">
+            <div class="UserContianer">
+                <div class="Bag">
+                    <a href="/Html/Bag.html" style="text-decoration: none;">
+                        <img src="/IMG/Bag.png" alt="Inventory Bag">
+                    </a>
+                </div>
+
+                <a href="#" style="text-decoration: none;" onclick="LogoutProfile()">
+                    <img src="/IMG/Profile.png" alt="User Profile" class="UserProfileImage" width="200" height="200">
+                </a>
+
+                <div class="UserInfo">
+                    <h2 class="Username"></h2>
+                </div>
+            </div>
+
+            <div class="Coin-Key">
+                <div id="Key-Display" class="User-Key" onclick="playTakeKeySound()">
+                    <img src="/IMG/Key.png" alt="Secret Key">
+                </div>
+
+                <div id="Coin-Display" class="Group-Coin" onclick="playCoinSound()">
+                    <img src="/IMG/Coin.png" alt="Coin Slot 1">
+                    <img src="/IMG/Coin.png" alt="Coin Slot 2">
+                    <img src="/IMG/Coin.png" alt="Coin Slot 3">
+                </div>
+            </div>
+        </header>
+
+        <!----------------------------------------------------------------------------------------------------------------------------
+
+        Theme 1
+
+        ------------------------------------------------------------------------------------------------------------------------------>
+
+        <div class="Section-All-Theme" id="theme1">
+            <main>
+                <section class="Section-Theme">
+                    <div class="Content-Wrapper">
+                        <div class="Box-Img" 
+                             onmouseenter="startHoverWatchaiSound()" 
+                             onmouseleave="stopHoverWatchaiSound()">
+                            <div class="Stamp-Checking" id="isStamp-place1">
+                                <img src="/IMG/Stamp-Checking-IMG.png" alt="Completion Stamp">
+                            </div>
+                            <img src="/IMG/Wat-Chaiwatthanaram-2.png" alt="Wat Chaiwatthanaram">
+                        </div>
+
+                        <div class="Box-Description"
+                             onmouseenter="startHoverTrypingSound()" 
+                             onmouseleave="stopHoverTrypingSound()">
+                            <p><strong>A historic temple from the late Ayutthaya period, commissioned in 1630 by King Prasat Thong to honor his mother. The architecture is distinguished by its central "Prang" (Khmer-style tower) surrounded by four smaller towers on a square base, symbolizing "Mount Meru," the center of the universe. Now a UNESCO World Heritage site, it remains a magnificent landmark representing the peak of ancient Thai artistry.</strong></p>
+                        </div>
+
+                        <div class="box-button-wrapper-container">
+                            <div class="button-wrapper" 
+                                 onmouseenter="startHoverWindSound()" 
+                                 onmouseleave="stopHoverWindSound()">
+                                <div class="Name-Place">
+                                    <h1><strong>Architectural Heritage Records</strong></h1>
+                                    <p>Wat Chaiwatthanaram</p>
+                                </div>
+                                <div class="Next-button">
+                                    <a href="Description_Theme1.html" style="text-decoration: none;">
+                                        <button type="button" class="NextButton"><strong>Next</strong></button>
+                                    </a>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!----------------------------------------------------------------------------------------------------------------------------
+
+        Theme 2
+
+        ------------------------------------------------------------------------------------------------------------------------------>
+
+        <div class="Section-All-Theme" id="theme2">
+            <main>
+                <section class="Section-Theme">
+                    <div class="Content-Wrapper">
+                        <div class="Box-Img" 
+                             onmouseenter="startHoverPalaceSound()" 
+                             onmouseleave="stopHoverPalaceSound()">
+                            <div class="Stamp-Checking" id="isStamp-place2">
+                                <img src="/IMG/Stamp-Checking-IMG.png" alt="Completion Stamp">
+                            </div>
+                            <img src="/IMG/Phra-Bat-Ananta-Samakhom-Bangkok-1.png" alt="Ananta Samakhom Throne Hall">
+                        </div>
+
+                        <div class="Box-Description"
+                             onmouseenter="startHoverTrypingSound()" 
+                             onmouseleave="stopHoverTrypingSound()">
+                            <p><strong>A masterpiece of Italian Renaissance architecture commissioned during the reign of King Rama V. Constructed with exquisite white marble from Carrara, Italy, the hall features a grand central dome surrounded by six smaller ones. Inside, vivid fresco paintings narrate significant events of the Chakri Dynasty, creating a seamless blend of European elegance and Thai royal history.</strong></p>
+                        </div>
+
+                        <div class="box-button-wrapper-container">
+                            <div class="button-wrapper" 
+                                 onmouseenter="startHoverWindSound()" 
+                                 onmouseleave="stopHoverWindSound()">
+                                <div class="Name-Place">
+                                    <h1><strong>Architectural Heritage Records</strong></h1>
+                                    <p>Ananta Samakhom Throne Hall</p>
+                                </div>
+                                <div class="Next-button">
+                                    <a href="Description_Theme2.html" style="text-decoration: none;">
+                                        <button type="button" class="NextButton"><strong>Next</strong></button>
+                                    </a>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!----------------------------------------------------------------------------------------------------------------------------
+
+        Theme 3
+
+        ------------------------------------------------------------------------------------------------------------------------------>
+
+        <div class="Section-All-Theme" id="theme3">
+            <main>
+                <section class="Section-Theme">
+                    <div class="Content-Wrapper">
+                        <div class="Box-Img" 
+                             onmouseenter="startHoverCitySound()" 
+                             onmouseleave="stopHoverCitySound()">
+                            <div class="Stamp-Checking" id="isStamp-place3">
+                                <img src="/IMG/Stamp-Checking-IMG.png" alt="Completion Stamp">
+                            </div>
+                            <img src="/IMG/mahanakhon-building-1.png" alt="King Power Mahanakhon">
+                        </div>
+
+                        <div class="Box-Description"
+                             onmouseenter="startHoverTrypingSound()" 
+                             onmouseleave="stopHoverTrypingSound()">
+                            <p><strong>A striking skyscraper celebrated for its unique "Pixel" design, symbolizing a dynamic and forward-looking metropolis. Standing 314 meters tall with 78 floors, it was once Thailand’s tallest building. The highlight is the "Mahanakhon Skywalk," a massive glass tray observation deck offering a 360-degree panoramic view of Bangkok, perfectly merging luxury lifestyle with cutting-edge technology.</strong></p>
+                        </div>
+
+                        <div class="box-button-wrapper-container">
+                            <div class="button-wrapper" 
+                                 onmouseenter="startHoverWindSound()" 
+                                 onmouseleave="stopHoverWindSound()">
+                                <div class="Name-Place">
+                                    <h1><strong>Architectural Heritage Records</strong></h1>
+                                    <p>King Power Mahanakhon</p>
+                                </div>
+                                <div class="Next-button">
+                                    <a href="Description_Theme3.html" style="text-decoration: none;">
+                                        <button type="button" class="NextButton"><strong>Next</strong></button>
+                                    </a>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!----------------------------------------------------------------------------------------------------------------------------
+
+        Theme 4
+
+        ------------------------------------------------------------------------------------------------------------------------------>
+
+        <div class="Section-All-Theme" id="theme4">
+            <main>
+                <section class="Section-Theme">
+                    <div class="Content-Wrapper">
+                        <div class="Box-Img" 
+                             onmouseenter="startHoverWatarunSound()" 
+                             onmouseleave="stopHoverWatarunSound()">
+                            <div class="Stamp-Checking" id="isStamp-place4">
+                                <img src="/IMG/Stamp-Checking-IMG.png" alt="Completion Stamp">
+                            </div>
+                            <img src="/IMG/Wat-Arun-Ratchawararam-1.png" alt="Wat Arun">
+                        </div>
+
+                        <div class="Box-Description"
+                             onmouseenter="startHoverTrypingSound()" 
+                             onmouseleave="stopHoverTrypingSound()">
+                            <p><strong>Renowned for its iconic "Riverside Prang" that serves as a symbol of Bangkok, this temple features late Ayutthaya art restored during the Rattanakosin era. The spire is intricately decorated with porcelain and Benjarong ceramic fragments, reflecting historical trade prosperity and cultural fusion. It is globally recognized as one of the world's most beautiful landmarks, especially during sunrise and sunset when light reflects off its porcelain surfaces.</strong></p>
+                        </div>
+
+                        <div class="box-button-wrapper-container">
+                            <div class="button-wrapper" 
+                                 onmouseenter="startHoverWindSound()" 
+                                 onmouseleave="stopHoverWindSound()">
+                                <div class="Name-Place">
+                                    <h1><strong>Architectural Heritage Records</strong></h1>
+                                    <p>Wat Arun</p>
+                                </div>
+                                <div class="Next-button">
+                                    <a href="Secret_Place_Theme.html" style="text-decoration: none;">
+                                        <button type="button" class="NextButton"><strong>Next</strong></button>
+                                    </a>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    
+    </div>
+
+    <script src="/JS/Javascript1.js"></script>
+
+</body>
+</html>

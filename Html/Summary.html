@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>The Architectural Chronicles</title>
+    <link rel="stylesheet" href="/CSS/Summary.css"> </head>
+    <link rel="icon" type="image/png" href="/IMG/Web-Icon.png">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+<body class="Summary-Body">
+
+    <main class="Summary-Container">
+        <section class="Certificate-Box">
+            <h1 class="Summary-Title">Mission Complete!</h1>
+            <p class="Summary-Sub">You have now gathered all the locations.</p>
+
+            <div class="Final-Coin-Display" id="Final-Coins">
+                </div>
+
+            <div class="Stats-Grid">
+                <div class="Stat-Item">
+                    <span class="Stat-Label">Locations explored</span>
+                    <span class="Stat-Value">3/3</span>
+                </div>
+                <div class="Stat-Item">
+                    <span class="Stat-Label">All coins</span>
+                    <span class="Stat-Value" id="Coin-Count">0</span>
+                </div>
+            </div>
+
+            <hr class="Summary-Divider">
+
+            <div class="Summary-Action">
+                <button class="NextButton" id="TakeKey" onclick="takeSecretKey()">
+                    <strong>Key to the secret location</strong>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <script src="/JS/Javascript1.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            renderSummary();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1001 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+/* ==========================================================================
+   (GLOBAL SETTINGS)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.Section-All-Theme {
+    height: 100;
+    width: 100%;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    background-color: #1a1914;
+}
+
+.Section-All-Theme::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.7; 
+    z-index: 1; 
+    transition: background-image 0.8s ease-in-out;
+}
+
+.Section-All-Theme > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* ------------------- Background ID ------------------- */
+#theme1::before { background-image: url('/IMG/wat-chaiwatthanaram-bg.png'); }
+#theme2::before { background-image: url('/IMG/Phra-Bat-Ananta-Samakhom-Bangkok-1.png'); }
+#theme3::before { background-image: url('/IMG/mahanakhon-building-bg.png'); }
+#theme4::before { background-image: url('/IMG/Wat-Arun-Ratchawararam-bg.png'); }
+#theme5::before { background-image: url('/IMG/Bag-BG-Room.png'); }
+#theme6::before { background-image: url('/IMG/Ticket-shop.png'); }
+
+#community-theme1::before { background-image: url('/IMG/wat-chaiwatthanaram-bg.png'); }
+#community-theme2::before { background-image: url('/IMG/Phra-Bat-Ananta-Samakhom-Bangkok-1.png'); }
+#community-theme3::before { background-image: url('/IMG/mahanakhon-building-bg.png'); }
+#community-theme4::before { background-image: url('/IMG/Wat-Arun-Ratchawararam-bg.png'); }
+
+#community-theme1 { background-image: url('/IMG/wat-chaiwatthanaram-bg.png'); }
+#community-theme2 { background-image: url('/IMG/Phra-Bat-Ananta-Samakhom-Bangkok-1.png'); }
+#community-theme3 { background-image: url('/IMG/mahanakhon-building-bg.png'); }
+#community-theme4 { background-image: url('/IMG/Wat-Arun-Ratchawararam-bg.png'); }
+
+/* ==========================================================================
+   (HEADER SECTION)
+   ========================================================================== */
+.Account {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;      
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.255);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    box-shadow: 0 3px 15px black;
+    padding: 10px 5%;
+}
+
+.UserContianer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.UserProfileImage {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #FFD700;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.UserProfileImage:hover {
+    transform: scale(1.1);
+}
+
+.Coin-Key{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.User-Key{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow:0 0 5px #000;
+    border-radius: 15%;
+    border:  solid 2px black;
+    transition: all 0.3s ease; 
+}
+
+.User-Key:hover{
+    box-shadow:0 0 10px #000;
+    transform: scale(1.2);
+    transform: translateY(-7px);
+}
+
+.User-Key:active{
+    box-shadow:0 0 10px #000;
+    transform: translateY(2px);
+}
+
+.User-Key img{
+    width: 60px;
+    height: 60px;
+    transform: scale(0.7);
+}
+
+.key-locked {
+    filter: grayscale(100%);
+    opacity: 0.3;           
+    transition: all 0.5s ease;
+}
+
+.User-Key img {
+    width: 50px;
+    height: auto;
+}
+
+.Group-Coin{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 220px;;
+    border-radius: 15px;
+    background-color:  #FFD700;
+    border-top: solid #FFD700;
+    padding: 12px;
+    box-shadow: 0 4px 5px #CC9300; 
+    margin: 10px 0;
+    transition: all 0.3s ease; 
+}
+
+.Group-Coin:hover{
+    background-color:  #FFD700;
+    transform: translateY(-2px); 
+    border-radius: 15px;
+   box-shadow: 0 4px 5px #CC9300; 
+
+    img{
+        background-color: #FFCC00; 
+        transform: translateY(-2px); 
+        border-radius: 15px;
+        box-shadow: 0 6px 0 #c68e00; 
+    }
+}
+
+.Group-Coin img {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    transition: all 0.3s ease; 
+}
+
+.Group-Coin img:active {
+    transform: translateY(2px); 
+    border-radius: 15px;
+    box-shadow: 0 0 0 #CC9300; 
+}
+
+.Name-Place {
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.611);
+    padding: 15px;
+    backdrop-filter: blur(0.2px);
+    -webkit-backdrop-filter: blur(0.2px);
+}
+
+/* ==========================================================================
+   (MAIN CONTENT & SLIDER)
+   ========================================================================== */
+.Main-Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    padding: 100px;
+}
+
+.Slider-Window-Wrapper {
+    position: relative;
+    max-width: 1200px;
+    max-height: 750px;
+    width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: #000 solid 2px;
+    border-top: #000 solid 2px;
+    background-color: #ffffff18;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #000000;
+}
+
+.Slider-Helping {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.Section-Theme {
+    height: 100vh; 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    margin: 0; 
+    padding-top: 100px;
+    position: relative;
+    overflow: hidden; 
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease-out;
+}
+
+.Section-Theme.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.Content-Wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5 px;
+}
+
+.Box-Img img {
+    border: 3px solid black;
+    max-width: 1200px;
+    height: 350px;
+    width: 350px;
+    transition: opacity 0.8s ease-in-out;
+    object-fit: cover;
+}
+
+.Box-Description {
+    border-radius: 20px;
+    padding: 30px;
+    font-size: 12px;   
+    line-height: 1.6;
+    color: #333;
+    max-width: 700px;
+    max-height: 350px;
+    width: 700px;
+    background: rgba(255, 255, 255, 0.785);
+    overflow-y: auto;
+    overflow-x: hidden;
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+}
+
+.Box-Description strong {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* ------------------- Scrollbar ------------------- */
+.Box-Description::-webkit-scrollbar {
+    display: none; 
+}
+
+.Box-Description {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* ------------------- Slider ------------------- */
+.Slider-Window {
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.Slider-Track {
+    display: flex;
+    width: max-content;
+}
+
+.Slide-Item {
+    width: 700px;
+    position: relative;
+}
+
+.Slide-Item img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+.Slide-Caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.495);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.Slider-Controls {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* ------------------- Tooltip ------------------- */
+.Slide-Item {
+    position: relative;
+    cursor: help;
+}
+
+.stamp-tooltip {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.552);
+    color: white;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 15px;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 9999;
+    max-width: 180px; 
+    line-height: 1.4;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+    transition: opacity 0.15s ease; 
+    white-space: normal; 
+    width: max-content;
+}
+
+.Slide-Item:hover .stamp-tooltip {
+    opacity: 1;
+}
+
+/* ==========================================================================
+   (COMMUNITY SECTION)
+   ========================================================================== */
+.Section-Community {
+    scroll-snap-align: start;
+}
+
+.Section-Theme-Community {
+    height: 100vh; 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    margin: 0; 
+    padding: 0;
+    position: relative;
+    overflow: hidden; 
+}
+
+.Community-Container {
+    width: 600px;
+    max-height: 600px;
+    gap: 10px;
+    flex-direction: column !important;
+    max-width: 1200px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.785);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease-out;
+}
+
+.Community-Container h2 { text-align: center; }
+.Community-Container p { text-align: center; }
+
+.Section-Theme.appear .Community-Container {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.Main-Box-Wrapper {
+    width: 100vh;
+    height: 50vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.Upload-Box {
+    border: 2px dashed #000000;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.Preview-Area img {
+    border: 2px dashed #000000;
+    border-radius: 15px;
+    text-align: center;
+    margin: 20px 0;
+    width: 100px;
+    transition: all 0.5s ease; 
+    cursor: pointer;
+}
+
+.Preview-Area img:hover {
+    border: 2px solid #000000;
+    transform: translateY(-2px);
+}
+
+#user-comment {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-family: inherit;
+    resize: none;
+    background-color: rgba(255, 255, 255, 0.466);
+}
+
+.Post-button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.PostButton {
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 10px;
+    width: 80px;
+    height: 40px;
+    background-color: #ffffff73; 
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 0 #00000074; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.PostButton:hover {
+    background-color: #2a38ff84; 
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 0 #03018086; 
+}
+
+.PostButton:active {
+    transform: translateY(2px); 
+    box-shadow: 0 0 0 #0011cc; 
+}
+
+.Mini-Feed {
+    text-align: left;
+    max-height: 300px;
+    max-width: 240px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0,0,0,0.2) transparent;
+}
+
+.Mini-Feed::-webkit-scrollbar { width: 6px; }
+
+.Feed-Item {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.Avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.Menu-Wrapper {
+    position: absolute;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    top: 170px;
+}
+
+.Menu-Bar {
+    width: 150px;
+    height: auto;
+    padding: 20px;
+    background-color: rgba(255, 203, 71, 0.556);
+    border: 2px solid rgba(255, 203, 71, 1);
+    box-shadow: 0px 5px 0px rgba(255, 203, 71, 1);
+    border-radius: 15px;
+    text-align: center;
+    color: #000;
+    transition: all 0.3s ease;
+}
+
+.Menu-Bar:hover {
+    background-color: rgba(255, 203, 71, 1);
+    font-size: large;
+    text-shadow: 1px 3px 5px rgba(106, 99, 0, 0.816);
+    transform: translateY(-2px);
+}
+
+.Menu-Bar:active { transform: translateY(2px); }
+
+/* ==========================================================================
+   (BUTTONS & NAVIGATION)
+   ========================================================================== */
+.button-wrapper {
+    display: flex;
+    justify-content: center; 
+}
+
+.NextButton {
+    width: 150px;
+    height: 50px;
+    background-color: #ffb70082; 
+    color: #000; 
+    border: none;
+    padding: 12px 35px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 25px;
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 0 #cc92007b; 
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+.NextButton:hover {
+    background-color: #FFCC00; 
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 0 #c68e00; 
+}
+
+.NextButton:active {
+    transform: translateY(2px); 
+    box-shadow: 0 0 0 #CC9300; 
+}
+
+.NextButton strong {
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.Post-Content { flex: 1; }
+.Post-Time {
+    font-size: 11px;
+    color: #888;
+    display: block;
+    margin-top: -5px;
+    margin-bottom: 5px;
+}
+
+.Post-Preview-In-Feed {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 8px;
+    border: 1px solid #f0f0f0;
+}   
+
+/* ==========================================================================
+   (TICKET SECTION)
+   ========================================================================== */
+.Box-TIcket {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; 
+    gap: 30px;
+    padding: 50px 20px 0px;
+}
+
+.Ticket-Item {
+    width: 250px; 
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
+    position: relative;
+}
+
+.Ticket-Item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.Ticket-Item:hover {
+    transform: translateY(-15px) scale(1.05);
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.4));
+}
+
+.Ticket-Item:active {
+    transform: translateY(2px) scale(0.95);
+    transition: all 0.1s ease;
+}
+
+.Ticket-Item.collected {
+    outline: 3px solid #FFB800;
+    border-radius: 100%;
+    animation: ticketGlow 2s infinite;
+}
+
+@keyframes ticketGlow {
+    0% { box-shadow: 0 0 5px #FFB800; }
+    50% { box-shadow: 0 0 20px #FFB800; }
+    100% { box-shadow: 0 0 5px #FFB800; }
+}
+
+.not-owned {
+    filter: grayscale(100%) brightness(70%); 
+    opacity: 0.5; 
+    cursor: no-drop;
+}
+
+/* ==========================================================================
+   (UTILITIES - MUSIC & MAP)
+   ========================================================================== */
+.Scroll-Container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory; 
+    scroll-behavior: smooth;
+}
+
+.music {
+    border: solid rgba(0, 0, 0, 0.856);
+    border-radius: 100%;
+    padding: 10px;
+    position: absolute;
+    left: 55px;
+    top: 30px;
+    cursor: pointer;
+    width: 50px; 
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    margin-right: 15px; 
+    box-shadow: 0px 0px 20px black;
+}
+
+.music img {
+    width: 100%;
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+.music.muted img {
+    filter: grayscale(100%);
+    opacity: 0.3;
+}
+
+.music:hover { transform: scale(1.1); }
+.music:active { transform: translateY(2px); }
+
+.space-div { height: 100px; }
+
+.Map-Wrapper {
+    border: solid rgba(0, 0, 0, 0.856);
+    border-radius: 100%;
+    padding: 10px;
+    position: absolute;
+    left: 55px;
+    top: 100px;
+    cursor: pointer;
+    width: 50px; 
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 20px black;
+}
+
+.Map-Wrapper Img {
+    width: 100%;
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+.Map-Wrapper:hover { transform: scale(1.1); }
+.Map-Wrapper:active { transform: translateY(2px); }
+
+/* ==========================================================================
+   MOBILE OPTIMIZATION (480px) 
+   ========================================================================== */
+@media (max-width: 480px) {
+    .Account {
+        padding: 5px 15px;
+        flex-direction: row; 
+        gap: 5px;
+        height: auto;
+    }
+
+    .UserContianer {
+        width: 100%;
+        justify-content: start;
+        gap: 15px;
+    }
+
+    .UserProfileImage {
+        width: 45px; 
+        height: 45px;
+    }
+
+    .Username {
+        font-size: 1rem;
+    }
+
+    .Group-Coin {
+        width: 160px; 
+        height: 50px;
+        padding: 5px 10px;
+        gap: 5px;
+        margin-right: 30px;
+    }
+
+    .Group-Coin img {
+        width: 30px;
+        height: 30px;
+    }
+
+    
+    .Main-Container {
+        padding: 20px 10px 20px 10px; 
+        gap: 10px;
+    }
+
+    .Slider-Window-Wrapper {
+        width: 100%;
+        max-width: 350px;
+        flex-direction: column; 
+        padding: 10px;
+    }
+
+    .Slider-Window {
+        width: 100%;
+        max-width: 320px;
+        margin: 10px 0;
+    }
+
+    .Slide-Item {
+        width: 320px; 
+    }
+
+    .Slide-Item img {
+        height: 220px; 
+    }
+
+    .Slide-Caption {
+        font-size: 0.9rem;
+        padding: 8px;
+        bottom: 10px;
+    }
+
+    
+    .music {
+        position: absolute; 
+        left: 15px;
+        top: 0px;
+        margin: 5px;
+    }
+
+    .Map-Wrapper{
+        position: absolute; 
+        left: 60px;
+        top: 0;
+        margin: 5px;
+    }
+
+    .Slider-Window-Wrapper {
+        display: flex;
+        flex-direction: column;
+        padding-top: 50px;
+    }
+
+    
+    .Slider-Helping {
+        flex-direction: row; 
+        width: 100%;
+        gap: 10px;
+    }
+
+    .NextButton {
+        width: 100%;
+        max-width: 280px;
+        height: 55px;
+        font-size: 1.1rem;
+    }
+
+    
+    .Community-Container {
+        width: 75vw;
+        height: 80vh;
+        padding: 15px;
+        justify-content: start;
+    }
+
+    .Main-Box-Wrapper {
+        flex-direction: column; 
+    }
+
+    .Header-Wrapper{
+        margin: 30px 0px;
+    }
+
+    .Upload-Box {
+        width: 80%;
+        height: auto;
+        display: grid;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+        grid-template-columns: auto auto;
+        grid-template-areas:
+            "Preview-Area PostButton"
+            "Comment-Input-Wrapper PostButton";
+        ;
+
+        padding: 20px 0px;
+
+    }
+
+    .Comment-Input-Wrapper{
+        width: 105px;
+        height: 20px;
+        padding: 0px;
+    }
+
+    .Comment-Input-Wrapper textarea{
+        font-size: 10px;
+    }
+
+    .Preview-Area img{
+        width: 80px;
+        height: 60px;
+        margin: 0px;
+    }
+
+    .Preview-Area p{
+        font-size: 10px;
+    }
+
+    .PostButton{
+        width: 85px;
+        height: 40px;
+        margin: 0px;
+        font-size: 10px;
+    }
+
+    .Mini-Feed {
+        width: 100%;
+        max-width: none;
+        max-height: 400px;
+    }
+
+    .Feed-Item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        padding: 50px 0px;
+    }
+
+    .Post-Image-Container img{
+        margin: 0px;
+        width: 100px;
+        height: 100px;
+    }
+
+    
+    .stamp-tooltip {
+        display: none !important;
+    }
+
+    
+    .Ticket-Item:hover {
+        transform: none !important;
+    }
+
+    .Menu-Wrapper {
+        position: absolute;
+        display: flex;
+        gap: 25px;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        top: 120px;
+    }
+
+    .Box-TIcket {
+        display: flex;
+        justify-content: flex-start; 
+        align-items: center;
+        flex-wrap: nowrap;           
+        gap: 20px;                   
+        padding: 20px 40px;          
+        
+        overflow-x: auto;            
+        scroll-snap-type: x mandatory; 
+        -webkit-overflow-scrolling: touch; 
+        
+        width: 100vw;                
+        height: auto;
+    }
+
+    .Box-TIcket::-webkit-scrollbar {
+        display: none;
+    }
+
+    
+    .Ticket-Item {
+        flex: 0 0 80%;               
+        scroll-snap-align: center;    
+        transition: transform 0.3s ease;
+    }
+
+    .Ticket-Item img {
+        width: 100%;
+        height: auto;
+        pointer-events: none;         
+    }
+
+    
+    .Ticket-Item:hover {
+        transform: none !important;
+    }
+}

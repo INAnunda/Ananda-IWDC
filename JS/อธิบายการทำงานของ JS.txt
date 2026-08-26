@@ -1,0 +1,405 @@
+Javascript1.Js
+
+// ฟังก์ชันดึงวันเวลาปัจจุบันรูปแบบไทย
+
+function getCurrentTimestamp() {
+    const now = new Date();  =| จะเก็บค่า วันเวลาปัจจุบัน
+    const options = {  	=| สร้าง เเละ เก็บ วัน เดือน ชั่วโมง นาที ให้เป็น Object
+        day: '2-digit',
+        month: 'short', 	=| shot หมายถึง เเสดงตัวย่อของเด
+        hour: '2-digit',
+        minute: '2-digit' 	=| 2digit หมายถึงเเสดง เลขเเค่ 2 หลัก
+    };
+    return now.toLocaleDateString('en-US', options); 	=| return ค่า now เเละ เเปลง(toLocaleDateString) โดยใช้ 'en-US' ค.ศ เเละ options ประกาศไว้
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// ฟังก์ชันอัปเดตการแสดงผลเหรียญในส่วนหน้าจอ
+
+function updateCoinUI() {
+    const coinDisplay = document.getElementById('Coin-Display');  =| เตรียม Element ที่มี ID Coin-Display ไว้
+    if (!coinDisplay) return;
+
+    let savedCoins = localStorage.getItem('userCoins') || 0;   	=| ดึง จำนวนเหรียญปัจจุบัน ถ้าไม่มี จะเป็น 0 เสมอ
+    let currentCoins = parseInt(savedCoins);	=| เเปลงค่า ให้เป็น Int โดย parseInt
+
+    coinDisplay.innerHTML = ''; 		=| ล้างข้อมูลทั้งหมดใน Element
+
+    for (let i = 1; i <= 3; i++) {
+        const coinImg = document.createElement('img');
+        if (i <= currentCoins) {
+            coinImg.src = '/IMG/Coin.png';	=| เข้าเงื่อนไขสร้าง เตรียมสร้างรูปปเหรียญ
+        } else {
+            coinImg.src = '/IMG/Coin.png';
+            coinImg.style.filter = 'grayscale(100%) opacity(1)'; 	=| เข้าเงื่อนไขอีกอันนึง เเต่อันนี้จะทำให้รูปเป็นขาวดำ 
+        }
+        coinImg.alt = 'Coin Status'; 
+        coinDisplay.appendChild(coinImg);  	=| สร้าง coinDisplay ที่ได้ประกาศไว้
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// ฟังก์ชันคลิกเลือกรูปในหน้า Login
+function selectProfile(profileId) {
+    const profilePath = `/IMG/${profileId}.png`; 	=| เก็บค่า Parameter จาก profileId เเะลนำมาประกาศไว้ สร้างที่ให้มันอยู่
+    localStorage.setItem('userProfile', profilePath); 	=| เก็บข้อมูล ไว้ใน Local 
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+// ฟังก์ชันแสดงตัวอย่างรูปภาพก่อนอัปโหลด
+function previewFile() {
+    const preview = document.getElementById('preview-img');
+    const file = document.getElementById('file-input').files[0];	=| เชื่อมต่อกับ Element ผ่าน ID เเละก็ เอาเเค่รูปเเรกเท่านั้นที่เลือก (.files[0];)
+    const text = document.getElementById('preview-text');
+    const reader = new FileReader();			=| นี้จะเป็นคำสั่งตัวใหม่ ที่เอาไว้ทำหน้าที่ในการเเปลงรูปภาพเป็นรหัส เพื่อไม่ให้ ตัว Bowser งง 
+
+    reader.onloadend = function () {		=| function ของบรรทัดนี้จะทำหน้าที่ ก็ต่อเมื้อ ได้ Result จาก if ด้านล่าง [เตรียมตัวไว้]
+        if (preview) preview.src = reader.result;	=| นำข้อมูลหลังจากอ่านเเล้ว (result) นั้นมาเเสดงเป็นรูปภาพ
+        if (text) text.innerText = "Change Image";	=| เปลี่ยน Text ว่า Change Image
+    }
+
+    if (file) {
+        reader.readAsDataURL(file);  	=| สั่งให้ ตัวของ reader อ่านไฟล์รูป 
+    } else {
+        if (preview) preview.src = "/IMG/Placeholder-camera.png";  =| ถ้าไม่มีรูป ก็กลับไปใช้รูปเดิม "/IMG/Placeholder-camera.png"
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+let scrollInterval;
+const track = document.querySelector('.Slider-Window');
+const btnStop = document.getElementById('btn-stop');
+const btnPlay = document.getElementById('btn-play');
+
+// ฟังก์ชันเริ่มการเลื่อนสไลด์อัตโนมัติ
+function startAutoScroll() {
+    if (!track) return; 
+    scrollInterval = setInterval(() => {	=| ใช้ setInterval() ซึ้งเป็น Timer API มากำหนดเวลาในการเลื่อนหน้าจอ
+        track.scrollLeft += 1.3;		=| เลื่อนไปด้านซ้าย ทีละ 1.3 Pixel
+        if (track.scrollLeft >= (track.scrollWidth - track.clientWidth)) { 	=| นำความกว้างทั้งหมด ของเนื้อหาเเละ ความกว้างของจอที่เห็น มาลบกัน เช็คตามเงื่อนไข ว่าเลื่อนมาถึงสุดรึยัง
+            track.scrollLeft = 0; 	=| จัดตำเเหน่งกลับไป 0 เหมือนเดิม
+        }
+    }, 20);
+}
+
+// จัดการเหตุการณ์เมื่อคลิกปุ่มหยุดหรือเริ่มสไลด์
+if (btnStop && btnPlay) {
+    btnStop.onclick = function() {
+        clearInterval(scrollInterval);			 หยุด Slide
+        btnStop.style.display = 'none';
+        btnPlay.style.display = 'inline-block';
+        playClickSound();
+    };
+
+    btnPlay.onclick = function() {
+        startAutoScroll(); 			 เล่น Slide ต่อ
+        btnPlay.style.display = 'none';
+        btnStop.style.display = 'inline-block';
+        playClickSound();
+    };
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// ฟังก์ชันจัดการการโพสต์รูปภาพและข้อความ
+function simulatePost(placeId) {
+    const fileInput = document.getElementById('file-input');		=|
+    const commentInput = document.getElementById('user-comment');	=|	ดึงค่าจาก Id Element มาเก็บไว้
+    const previewImg = document.getElementById('preview-img');		=|
+
+    if (!fileInput || !previewImg) {
+        console.error("Post elements not found!");	=| ถ้าหากหว่า !fileInput || !previewImg = ไม่มีค่า ก็เข้าเงื่อนไข Return
+        return;
+    }
+
+    if (fileInput.files.length === 0) {			=| ถ้าหากว่า FileInput มีค่าเท่ากับ 0 ก็เข้าเงื่อนไข ของ Swal
+        Swal.fire({
+            title: 'No Image Selected!',
+            text: 'Please select an image from your device before posting.',
+            icon: 'error',
+            confirmButtonColor: '#d33'
+        });
+        return;
+    }
+
+    Swal.fire({
+        title: 'Confirm Post?',
+        text: "Would you like to share this photo in the Community?",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#007bff',
+        cancelButtonColor: '#6c757d',
+        confirmButtonText: 'Confirm',
+        cancelButtonText: 'Cancel',
+        reverseButtons: true
+    }).then((result) => {	=| รอค่า ว่า User จะกดอะไร(result)
+        playPostSound();
+        if (result.isConfirmed) {	=| ถ้าหากกดให้เข้า เงื่อนไข 
+            const commentText = commentInput ? (commentInput.value.trim() || "Visited this place!") : "Visited this place!";
+            const timeStamp = getCurrentTimestamp();
+            const imageData = previewImg.src;
+
+            let allPosts = JSON.parse(localStorage.getItem('community_posts')) || {};	=| ดึง community_posts จาก localStorage มา พร้อมเเปลงค่ากลับให้เป็น Object
+            if (!allPosts[placeId]) allPosts[placeId] = [];	=| ล้างข้อมูล ใน Object เพื่อใส่เข้าไปใหม่
+            allPosts[placeId].push({	=| ใส่ข้อมูลลง Object
+                text: commentText,
+                time: timeStamp,
+                image: imageData
+            });
+            localStorage.setItem('community_posts', JSON.stringify(allPosts));		=| เก็บข้อมูลลง localStorage
+
+            let postedPlaces = JSON.parse(localStorage.getItem('postedPlaces')) || [];		=| ดึงข้อมูลลงตัวเเปล ถ้าไม่มีเป็นว่าง
+            if (!postedPlaces.includes(placeId)) {						=| เช็คว่า มี placeId อยู่เเล้วไหมโดยใช้ includes
+                postedPlaces.push(placeId);							=| ยัดข้อมูล เข้า Array
+                localStorage.setItem('postedPlaces', JSON.stringify(postedPlaces));		=| เเละเก็บข้อมูลเข้า Local พร้อมเเปลง
+            }
+
+            Swal.fire({
+                title: 'Upload Successful!',
+                text: 'Updating your community feed...',
+                icon: 'success',
+                timer: 1500,
+                showConfirmButton: false
+            }).then(() => {
+                location.reload();
+            });
+        }
+    });
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// ฟังก์ชันโหลดข้อมูลโพสต์จาก LocalStorage มาแสดงผล
+function loadLocalPosts(placeId) {
+    const miniFeed = document.getElementById('mini-feed-' + placeId);
+    if (!miniFeed) return;
+
+    const currentUserProfile = localStorage.getItem('userProfile') || '/IMG/profile1.png';
+    const currentUsername = localStorage.getItem('userName') || 'You';
+
+    let allPosts = JSON.parse(localStorage.getItem('community_posts')) || {};	=| ดึง community ของ หน้านั้นๆมา โดยใช้จาก placeId ข้างล่าง
+    let localPosts = allPosts[placeId] || [];
+
+    miniFeed.innerHTML = '';
+
+    localPosts.forEach(post => {				=| วนลูบ สร้าง Element จนกว่าจะครบหมด
+        const postItem = document.createElement('div');		=| เก็บค่าที่เอาไว้สร้าง Div เปล่าเอาไว้
+        postItem.className = 'Feed-Item';			=| กำหนด Div ต้องใช้ Class Feed-Itme
+        
+        postItem.innerHTML = `
+            <img src="${currentUserProfile}" class="Avatar">
+            <div class="Post-Body">
+                <p><strong>${currentUsername}:</strong> ${post.text}</p>
+                <div class="Post-Content">
+                    <span class="Post-Time">${post.time}</span>
+                    <div class="Post-Image-Container">
+                        <img src="${post.image}" class="Post-Preview-In-Feed">
+                    </div>
+                </div>
+            </div>
+        `;
+        miniFeed.prepend(postItem);				=| สร้าง เเละเอาไปไว้ข้างบน ปกติเเล้วถ้าใช้ appendChild มันจะต่อท้าย 
+    });
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+function collectCoin(placeId) {
+    let postedPlaces = JSON.parse(localStorage.getItem('postedPlaces')) || [];
+
+    if (!postedPlaces.includes(placeId)) {	=| เช็คว่า โพสยัง ถ้ายังเข้าเงื่อนไข
+        Swal.fire({
+            title: 'Action Required!',
+            text: 'Please share a photo in the Community feed below to confirm your visit.',
+            icon: 'warning',
+            confirmButtonColor: '#FFB800'
+        });
+
+        const communityElement = document.getElementById('community-' + placeId);	=| เก็บค่า เเละ เช็คถ้ามี Element ให้นำทาง User เข้าไปหาจุดที่ต้อง โพส
+        if (communityElement) {
+            communityElement.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        playCancelSound();
+        return;
+    }
+
+    let savedCoins = localStorage.getItem('userCoins') || 0;
+    let currentCoins = parseInt(savedCoins);
+    let savedPlaces = localStorage.getItem('collectedPlaces') || "[]";
+    let collectedPlaces = JSON.parse(savedPlaces);
+
+    if (!collectedPlaces.includes(placeId)) {		=| ถ้ายังไม่ได้รับเหรียญ ก็เข้า เงื่อนไข
+        currentCoins += 1;
+        collectedPlaces.push(placeId);
+        
+        localStorage.setItem('userCoins', currentCoins);
+        localStorage.setItem('collectedPlaces', JSON.stringify(collectedPlaces));
+
+        updateCoinUI();					=| อับเดต UI ภาพเหรียญ
+        playTakeCoinSound();
+        
+        Swal.fire({
+            title: 'Congratulations!',
+            text: 'You have collected an architectural record. 1 coin earned!',
+            icon: 'success',
+            confirmButtonText: 'Next',
+            confirmButtonColor: '#FFB800'
+        }).then((result) => {
+            handleNavigation(placeId, currentCoins);	=| เมื่อรับเหรียญเเล้ว ก็ไปหน้าอื่น
+        });
+    } else {
+        handleNavigation(placeId, currentCoins);	=| ไปหน้าอื่นถ้าเข้า Else เเต่ไม่ได้รับเหรียญเพราะ includes เขาเช็คว่ามี placeId นั้น เเล้ว
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// ฟังก์ชันสำหรับสร้างฉากกั้น (Locked Overlay) เฉพาะ Theme 4
+function createLockedOverlay() {
+    const theme4 = document.getElementById('theme4');
+    if (!theme4 || localStorage.getItem('isUnlocked') === 'true') return;		=| เช็คว่า ไม่มีหน้า theme4 หรือ ('isUnlocked') === 'true' ไหม ถ้ามี ไม่เเสดง (ไม่สร้าง)
+
+    const overlay = document.createElement('div');					=| เก็บค่าสร้าง div
+    overlay.id = 'lockedOverlay';							=| ใส่ id
+    overlay.className = 'Locked-Place';							=| ใส่ Class
+
+    overlay.innerHTML = `
+        <div class="Locked-container">
+            <button type="button" class="Key-Unlock-Btn" onclick="checkUnlockKey()">	=| สร้าง เมื่อกดปุ่ม จะเข้าไปใช้ Function onclick="checkUnlockKey()
+                <img src="/IMG/Locked.png" alt="Unlock">
+            </button>
+            <p>Hidden Location<br>Secret Key Required</p>
+        </div>
+    `;
+
+    theme4.style.position = 'relative';							=| ปรับ theme4 ให้เป็น Relative
+    theme4.appendChild(overlay);							=| สร้าง overlay ที่ได้เตรียมไว้ ใน Theme 4 ซึ่งเป็น absolute
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+function checkUnlockKey() {
+    playClickLockedSound();
+    
+    const hasKey = localStorage.getItem('hasSecretKey');
+    const overlay = document.getElementById('lockedOverlay');
+    const lockImg = overlay ? overlay.querySelector('img') : null;	=| เป็นการใช้  if...else เเบบย่อ(Conditional Ternary Operator) ถ้ามี overlay ให้ทำ overlay.querySelector('img') :else ให้ null
+
+    if (hasKey === 'true') {
+        
+        if (lockImg) {
+            lockImg.classList.add('key-vibrating')			=| ถ้ามีกุญเเจให้เข้าอนิเมชั้น กุญเเจสั่นที่ทำไว้ใน Css
+        }
+
+        setTimeout(() => {
+            
+            playOpenLockedSound();
+
+            Swal.fire({
+                title: 'Unlock Successful!',
+                text: 'The hidden location has been revealed.',
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 1500
+            }).then(() => {
+                localStorage.setItem('isUnlocked', 'true');
+
+                if (overlay) {
+                    overlay.style.transition = "opacity 1s ease";
+                    overlay.style.opacity = '0';			=| ค่อยๆจาง
+                    
+                    setTimeout(() => overlay.remove(), 1000);		=| Remove overlay ออกไป หลังจาก ค่อยๆจาง ด้านบน
+                }
+            });
+
+        }, 2000);							=| ค่อยทำ หลังจาก 2 วิ
+
+    } else {
+        if (lockImg) {
+            lockImg.classList.add('key-vibrating');
+            setTimeout(() => lockImg.classList.remove('key-vibrating'), 500);
+        }
+
+        setTimeout(() =>{{
+                Swal.fire({
+                title: 'Access Denied!',
+                text: 'Secret Key required. Complete your collection to earn it.',
+                icon: 'error',
+                confirmButtonColor: '#d33'
+            });
+        }}, 300);
+        
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+function collectTicket(ticketId) {
+    let currentCoins = parseInt(localStorage.getItem('userCoins')) || 0;
+    let userTickets = JSON.parse(localStorage.getItem('user_tickets')) || [];
+
+    if (userTickets.includes(ticketId)) {			=| เป็นการเช็คว่ามีตั๋วนี้อยู่เเล้วไหม ถ้ามีก็ เเสดงเป็นเจ้าของแล้ว
+        Swal.fire({
+            title: 'Item Already Owned',
+            text: 'You have already purchased this ticket.',
+            icon: 'info',
+            confirmButtonColor: '#6c757d'
+        });
+        return;
+    }
+
+    if (currentCoins >= 3) {					=| มีเงินมากกว่า หรือ เท่ากับ 3 จะเข้าเเละถามว่าอยากซื้อไหม
+        playCheckbillSound()
+        
+        Swal.fire({
+            title: 'Confirm Exchange?',
+            text: "This ticket costs 3 coins. Do you wish to proceed?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#FFB800',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, Spend 3 Coins',
+            cancelButtonText: 'Cancel',
+            reverseButtons: true
+        }).then((result) => {					=| ถ้าซื้อ มันจะทำการหัก 3 เหรียญ เเละ เก็บ ticket ที่เราซื้อไปเก็บไว้ใน local
+            if (result.isConfirmed) {
+                currentCoins -= 3;
+                localStorage.setItem('userCoins', currentCoins);
+                
+                userTickets.push(ticketId);
+                localStorage.setItem('user_tickets', JSON.stringify(userTickets));
+
+                if (typeof playCoinSound === 'function') playCoinSound();		=| หมายถึง ถ้ามีฟังก์ชันเล่นเสียงนี้ ก็เล่น ถ้าไม่มี ไม่เล่น เป็นการเขียนเเบบย่อ เพื่อความปลอดภัย
+
+                updateCoinUI(); 						=| อัปเดต สถานะของเหรียญ
+
+                Swal.fire({
+                    title: 'Purchase Successful!',
+                    text: '3 coins have been deducted. Ticket added to inventory.',
+                    icon: 'success',
+                    confirmButtonColor: '#FFB800'
+                });
+
+                playPurchase();
+                document.getElementById(ticketId).classList.add('collected');	=| เติม Class เข้าไป เพื่อให้รู้ว่า ซื้อเเล้ว
+            }
+        });
+    } else {
+        if (typeof playCancelSound === 'function') playCancelSound();		=| ไม่เข้าเงื่อนไข เพราะเงินไม่พอ
+        
+        Swal.fire({
+            title: 'Not Enough Coins!',
+            text: `You need at least 3 coins (Current balance: ${currentCoins}).`,
+            icon: 'error',
+            confirmButtonColor: '#d33'
+        });
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

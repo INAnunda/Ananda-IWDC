@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+.End-Body {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/IMG/mahanakhon-building-bg.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Sarabun', sans-serif;
+    overflow: hidden;
+}
+
+.End-Container {
+    perspective: 1000px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Reward-Box {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 50px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    text-align: center;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+}
+
+.End-Title {
+    color: #000000;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+
+    transition: all 0.5s ease;
+}
+
+.End-Title:hover{
+    color: #fbca07;
+    text-shadow: 0px 5px 15px #fbca07;
+}
+
+.Coin-Stage {
+    margin: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.Floating-Coin {
+    width: 150px;
+    height: 150px;
+    filter: drop-shadow(0 0 20px rgba(255, 184, 0, 0.6));
+}
+
+.End-Message {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.NextButton {
+    background-color: #FFB800;
+    color: #000;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 0 #cc9200;
+    transition: all 0.2s;
+}
+
+.NextButton:hover {
+    background-color: #ffd000;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   MOBILE OPTIMIZATION (480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+
+    .End-Body {
+        padding: 20px;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .Reward-Box {
+        width: 95%;
+        max-width: 350px;
+        padding: 30px 20px;
+        border-radius: 20px;
+        margin: 20px auto;
+    }
+
+    .End-Title {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .End-Message {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 25px;
+        padding: 0 10px;
+    }
+
+    .Coin-Stage {
+        height: 150px;
+        margin: 20px 0;
+    }
+
+    .Floating-Coin {
+        width: 100px;
+        height: 100px;
+        filter: drop-shadow(0 0 15px rgba(255, 184, 0, 0.5));
+    }
+
+    .NextButton {
+        width: 100%;
+        max-width: 200px;
+        height: 55px;
+        font-size: 1.1rem;
+        padding: 10px 20px;
+    }
+
+    .Reward-Box:hover,
+    .End-Title:hover {
+        transform: none !important;
+        text-shadow: none !important;
+    }
+}

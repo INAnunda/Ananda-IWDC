@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Architectural Chronicles</title>
+    <link rel="stylesheet" href="/Css/Description.css">
+    <link rel="icon" type="image/png" href="/IMG/Web-Icon.png">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="Scroll-Container">
+
+        <div class="Section-All-Theme" id="theme2">
+
+            <header class="Account">
+                <div class="UserContianer">
+                    <a href="#" style="text-decoration: none;" onclick="LogoutProfile()">
+                        <img src="/IMG/Profile.png" alt="User Profile" class="UserProfileImage" width="200" height="200">
+                    </a>
+                    <div class="UserInfo">
+                        <h2 class="Username"></h2>
+                    </div>
+                </div>
+
+                <div class="Coin-Key">
+                    <div id="Key-Display" class="User-Key" onclick="playTakeKeySound()">
+                        <img src="/IMG/Key.png" alt="Key">
+                    </div>
+                    <div id="Coin-Display" class="Group-Coin" onclick="playCoinSound()">
+                        <img src="/IMG/Coin.png" alt="Coin Slot 1">
+                        <img src="/IMG/Coin.png" alt="Coin Slot 2">
+                        <img src="/IMG/Coin.png" alt="Coin Slot 3">
+                    </div>
+                </div>
+            </header>
+
+            <main>
+                <section class="Section-Theme">
+                    <div class="Main-Container">
+
+                        <div class="Slider-Window-Wrapper">
+                            <div class="music" id="music-toggle" onclick="toggleMusic(), playClickSound()">
+                                <img src="/IMG/speaker-icon.png" alt="Toggle Music" id="speaker-icon">
+                            </div>
+
+                            <div class="Map-Wrapper">
+                                <div class="Icon-Map-Location" onclick="playOpenMapSound()">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=13.7717, 100.5131" target="_blank" style="text-decoration: none;">
+                                        <img src="/IMG/MapIcon.png" alt="Location Map">
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="Slider-Window">
+                                <div class="Slider-Track" id="slider-track">
+                                    <div class="Slide-Item">
+                                        <img src="/IMG/Phra-Bat-Ananta-Samakhom-Bangkok-1.png" alt="Throne Hall Main View">
+                                        <div class="Slide-Caption">Pure Carrara White Marble</div>
+                                        <div class="stamp-tooltip">The only building in Thailand constructed entirely from pure white marble imported from Carrara, Italy. This material gives the hall its luminous appearance and timeless European classical elegance.</div>
+                                    </div>
+                                    <div class="Slide-Item">
+                                        <img src="/IMG/Phra-Bat-Ananta-Samakhom-Bangkok-4.png" alt="Throne Hall Front View">
+                                        <div class="Slide-Caption">The Neoclassical Domes</div>
+                                        <div class="stamp-tooltip">The grand central dome, flanked by six smaller ones, was influenced by St. Peter's Basilica in Rome. It creates a majestic and international silhouette for the Bangkok skyline.</div>
+                                    </div>
+                                    <div class="Slide-Item">
+                                        <img src="/IMG/Phra-Bat-Ananta-Samakhom-Bangkok-2.png" alt="Throne Hall Aerial View">
+                                        <div class="Slide-Caption">The Dome’s Fresco Paintings</div>
+                                        <div class="stamp-tooltip">The interior features rare "Fresco" masterpieces. These artworks depict the significant royal duties of Kings Rama I through Rama VI, a unique artistic fusion rarely found in contemporary Thai architecture.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="Slider-Helping">
+                            <div class="button-wrapper">
+                                <button id="btn-stop" class="NextButton" style="background-color: #f734347e; color: white; box-shadow: 0 4px 0 #a106067c;"><strong>STOP</strong></button>
+                                <button id="btn-play" class="NextButton" style="display: none; background-color: #01ff12; color: white; box-shadow: 0 4px 0 #038b0c;"><strong>PLAY</strong></button>
+                            </div>
+                            <div class="button-wrapper">
+                                <button type="button" class="NextButton" onclick="collectCoin('theme2')"><strong>Take</strong></button>
+                            </div>
+                            <div class="button-wrapper">
+                                <a href="/Html/Main_Theme.html" style="text-decoration: none;">
+                                    <button type="button" class="NextButton" style="background-color: #ffffff84; color: white; box-shadow: 0 4px 0 #6c6c6c80;"><strong>Back</strong></button>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+            </main>
+        </div>
+        
+        <div class="Section-Community">
+            <div class="Section-Theme-Community" id="community-theme2">
+                <section class="Section-Theme Community-Container">
+                    <div class="Header-Wrapper">
+                        <div class="Community-Header">
+                            <h2>Community Hub</h2>
+                            <p>Share photos from real locations to earn a medal.</p>
+                        </div>
+                    </div>
+
+                    <div class="Main-Box-Wrapper">
+                        <div class="Upload-Box">
+                            <div class="Preview-Area" onclick="document.getElementById('file-input').click()">
+                                <img src="/IMG/Select-an-image.png" alt="Upload Preview" id="preview-img">
+                                <p id="preview-text">Click to select your image.</p>
+                            </div>
+                            <div class="Comment-Input-Wrapper">
+                                <textarea id="user-comment" placeholder="Write down your impressions."></textarea>
+                            </div>
+                            <div class="Post-button-wrapper">
+                                <input type="file" id="file-input" accept="image/*" onchange="previewFile()" hidden>
+                                <button type="button" class="PostButton" onclick="simulatePost('theme2')">Post</button>
+                            </div>
+                        </div>
+
+                        <div class="Mini-Feed" id="mini-feed-theme2">
+                            </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+    </div>
+
+    <audio id="theme-bg-music" loop></audio>
+    <script src="/JS/Javascript1.js"></script>
+    <script src="/JS/MusicHandler.js"></script>
+</body>
+</html>
