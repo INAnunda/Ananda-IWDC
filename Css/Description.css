@@ -44,22 +44,22 @@
 }
 
 /* ------------------- Background ID ------------------- */
-#theme1::before { background-image: url('/IMG/wat-chaiwatthanaram-bg.png'); }
-#theme2::before { background-image: url('/IMG/Phra-Bat-Ananta-Samakhom-Bangkok-1.png'); }
-#theme3::before { background-image: url('/IMG/mahanakhon-building-bg.png'); }
-#theme4::before { background-image: url('/IMG/Wat-Arun-Ratchawararam-bg.png'); }
-#theme5::before { background-image: url('/IMG/Bag-BG-Room.png'); }
-#theme6::before { background-image: url('/IMG/Ticket-shop.png'); }
+#theme1::before { background-image: url('../IMG/wat-chaiwatthanaram-bg.png'); }
+#theme2::before { background-image: url('../IMG/Phra-Bat-Ananta-Samakhom-Bangkok-1.png'); }
+#theme3::before { background-image: url('../IMG/mahanakhon-building-bg.png'); }
+#theme4::before { background-image: url('../IMG/Wat-Arun-Ratchawararam-bg.png'); }
+#theme5::before { background-image: url('../IMG/Bag-BG-Room.png'); }
+#theme6::before { background-image: url('../IMG/Ticket-shop.png'); }
 
-#community-theme1::before { background-image: url('/IMG/wat-chaiwatthanaram-bg.png'); }
-#community-theme2::before { background-image: url('/IMG/Phra-Bat-Ananta-Samakhom-Bangkok-1.png'); }
-#community-theme3::before { background-image: url('/IMG/mahanakhon-building-bg.png'); }
-#community-theme4::before { background-image: url('/IMG/Wat-Arun-Ratchawararam-bg.png'); }
+#community-theme1::before { background-image: url('../IMG/wat-chaiwatthanaram-bg.png'); }
+#community-theme2::before { background-image: url('../IMG/Phra-Bat-Ananta-Samakhom-Bangkok-1.png'); }
+#community-theme3::before { background-image: url('../IMG/mahanakhon-building-bg.png'); }
+#community-theme4::before { background-image: url('../IMG/Wat-Arun-Ratchawararam-bg.png'); }
 
-#community-theme1 { background-image: url('/IMG/wat-chaiwatthanaram-bg.png'); }
-#community-theme2 { background-image: url('/IMG/Phra-Bat-Ananta-Samakhom-Bangkok-1.png'); }
-#community-theme3 { background-image: url('/IMG/mahanakhon-building-bg.png'); }
-#community-theme4 { background-image: url('/IMG/Wat-Arun-Ratchawararam-bg.png'); }
+#community-theme1 { background-image: url('../IMG/wat-chaiwatthanaram-bg.png'); }
+#community-theme2 { background-image: url('../IMG/Phra-Bat-Ananta-Samakhom-Bangkok-1.png'); }
+#community-theme3 { background-image: url('../IMG/mahanakhon-building-bg.png'); }
+#community-theme4 { background-image: url('../IMG/Wat-Arun-Ratchawararam-bg.png'); }
 
 /* ==========================================================================
    (HEADER SECTION)

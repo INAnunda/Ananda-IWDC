@@ -44,10 +44,10 @@
     z-index: 2;
 }
 
-#theme1::before { background-image: url('/IMG/wat-chaiwatthanaram-bg.png'); }
-#theme2::before { background-image: url('/IMG/Phra-Bat-Ananta-Samakhom-Bangkok-1.png'); }
-#theme3::before { background-image: url('/IMG/mahanakhon-building-bg.png'); }
-#theme4::before { background-image: url('/IMG/Wat-Arun-Ratchawararam-bg.png'); }
+#theme1::before { background-image: url('../IMG/wat-chaiwatthanaram-bg.png'); }
+#theme2::before { background-image: url('../IMG/Phra-Bat-Ananta-Samakhom-Bangkok-1.png'); }
+#theme3::before { background-image: url('../IMG/mahanakhon-building-bg.png'); }
+#theme4::before { background-image: url('../IMG/Wat-Arun-Ratchawararam-bg.png'); }
 
 /* ==========================================================================
    HEADER & USER ACCOUNT
