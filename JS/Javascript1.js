@@ -251,7 +251,7 @@ function previewFile() {
     if (file) {
         reader.readAsDataURL(file);
     } else {
-        if (preview) preview.src = "/IMG/Placeholder-camera.png";
+        if (preview) preview.src = "../IMG/Placeholder-camera.png";
     }
 }
 
@@ -323,7 +323,7 @@ function simulatePost(placeId) {
 
 // ฟังก์ชันคลิกเลือกรูปในหน้า Login
 function selectProfile(profileId) {
-    const profilePath = `/IMG/${profileId}.png`;
+    const profilePath = `../IMG/${profileId}.png`;
     localStorage.setItem('userProfile', profilePath);
 }
 
@@ -332,7 +332,7 @@ function loadLocalPosts(placeId) {
     const miniFeed = document.getElementById('mini-feed-' + placeId);
     if (!miniFeed) return;
 
-    const currentUserProfile = localStorage.getItem('userProfile') || '/IMG/profile1.png';
+    const currentUserProfile = localStorage.getItem('userProfile') || '../IMG/profile1.png';
     const currentUsername = localStorage.getItem('userName') || 'You';
 
     let allPosts = JSON.parse(localStorage.getItem('community_posts')) || {};
@@ -827,7 +827,7 @@ function renderSummary() {
 
     for (let i = 0; i < currentCoins; i++) {
         const img = document.createElement('img');
-        img.src = '/IMG/Coin.png';
+        img.src = '../IMG/Coin.png';
         img.classList.add('stamp-appear');
         coinContainer.appendChild(img);
     }
