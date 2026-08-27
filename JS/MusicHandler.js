@@ -5,13 +5,13 @@
  */
 
 const themeSongs = {
-    'Description_Theme1.html': '/Sound/WatChai.mp3',
-    'Description_Theme2.html': '/Sound/throne-hall.mp3',
-    'Description_Theme3.html': '/Sound/mahanakhon.mp3',
-    'Secret_Place_Theme.html': '/Sound/wat-arun.mp3',
-    'EndPage.html': '/Sound/Win-game.mp3',
-    'Bag.html': '/Sound/inventory-bgm.mp3',
-    'Ticket.html': '/Sound/shop-bgm.mp3',
+    'Description_Theme1.html': '../Sound/WatChai.mp3',
+    'Description_Theme2.html': '../Sound/throne-hall.mp3',
+    'Description_Theme3.html': '../Sound/mahanakhon.mp3',
+    'Secret_Place_Theme.html': '../Sound/wat-arun.mp3',
+    'EndPage.html': '../Sound/Win-game.mp3',
+    'Bag.html': '../Sound/inventory-bgm.mp3',
+    'Ticket.html': '../Sound/shop-bgm.mp3',
 };
 
 /**

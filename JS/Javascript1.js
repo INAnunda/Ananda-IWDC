@@ -3,25 +3,25 @@
  * 1. ระบบจัดการเสียง (Sound Management)
  * ==========================================
  */
-const hoverWind = new Audio('/Sound/Wind.mp3');
-const hoverWatchai = new Audio('/Sound/WatChai.mp3');
-const hoverPalace = new Audio('/Sound/throne-hall.mp3');
-const hoverCity = new Audio('/Sound/mahanakhon.mp3');
-const hoverWatarun = new Audio('/Sound/wat-arun.mp3');
-const hoverTryping = new Audio('/Sound/Typing.mp3');
-const hoverPickItem = new Audio('/Sound/Ticket.mp3');
-const coinSound = new Audio('/Sound/Coin.mp3');
-const takecoinSound = new Audio('/Sound/TakeCoin.mp3');
-const clickSound = new Audio('/Sound/click.mp3');
-const cancelSound = new Audio('/Sound/Cancel.mp3');
-const postSound = new Audio('/Sound/Post.mp3');
-const purchaseSound = new Audio('/Sound/item-purchase.mp3');
-const checkbillSound = new Audio('/Sound/cash_register_open.mp3');
-const openMapSound = new Audio('/Sound/openMap.mp3');
-const openLockedSound = new Audio('/Sound/Unlock.mp3');
-const takeKeySound = new Audio('/Sound/Get-key.mp3');
-const clickLockedSound = new Audio('/Sound/ClickLockedSound.mp3');
-const winGameSound = new Audio('/Sound/Win-game.mp3.mp3');
+const hoverWind = new Audio('../Sound/Wind.mp3');
+const hoverWatchai = new Audio('../Sound/WatChai.mp3');
+const hoverPalace = new Audio('../Sound/throne-hall.mp3');
+const hoverCity = new Audio('../Sound/mahanakhon.mp3');
+const hoverWatarun = new Audio('../Sound/wat-arun.mp3');
+const hoverTryping = new Audio('../Sound/Typing.mp3');
+const hoverPickItem = new Audio('../Sound/Ticket.mp3');
+const coinSound = new Audio('../Sound/Coin.mp3');
+const takecoinSound = new Audio('../Sound/TakeCoin.mp3');
+const clickSound = new Audio('../Sound/click.mp3');
+const cancelSound = new Audio('../Sound/Cancel.mp3');
+const postSound = new Audio('../Sound/Post.mp3');
+const purchaseSound = new Audio('../Sound/item-purchase.mp3');
+const checkbillSound = new Audio('../Sound/cash_register_open.mp3');
+const openMapSound = new Audio('../Sound/openMap.mp3');
+const openLockedSound = new Audio('../Sound/Unlock.mp3');
+const takeKeySound = new Audio('../Sound/Get-key.mp3');
+const clickLockedSound = new Audio('../Sound/ClickLockedSound.mp3');
+const winGameSound = new Audio('../Sound/Win-game.mp3.mp3');
 
 // ฟังก์ชันเริ่มเล่นเสียงลม
 function startHoverWindSound() {
@@ -849,7 +849,7 @@ function LogoutProfile(){
         if (result.isConfirmed) {
             localStorage.clear(); 
             
-            window.location.href = "LoginPage.html";
+            window.location.href = "../LoginPage.html";
         }
     });
 }
