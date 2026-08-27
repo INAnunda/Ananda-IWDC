@@ -379,9 +379,9 @@ function updateCoinUI() {
     for (let i = 1; i <= 3; i++) {
         const coinImg = document.createElement('img');
         if (i <= currentCoins) {
-            coinImg.src = '/IMG/Coin.png'; 
+            coinImg.src = '../IMG/Coin.png'; 
         } else {
-            coinImg.src = '/IMG/Coin.png'; 
+            coinImg.src = '../IMG/Coin.png'; 
             coinImg.style.filter = 'grayscale(100%) opacity(1)'; 
         }
         coinImg.alt = 'Coin Status';
@@ -710,7 +710,7 @@ function createLockedOverlay() {
     overlay.innerHTML = `
         <div class="Locked-container">
             <button type="button" class="Key-Unlock-Btn" onclick="checkUnlockKey()">
-                <img src="/IMG/Locked.png" alt="Unlock">
+                <img src="../IMG/Locked.png" alt="Unlock">
             </button>
             <p>Hidden Location<br>Secret Key Required</p>
         </div>
@@ -849,7 +849,7 @@ function LogoutProfile(){
         if (result.isConfirmed) {
             localStorage.clear(); 
             
-            window.location.href = "../LoginPage.html";
+            window.location.href = "../index.html";
         }
     });
 }
